@@ -19,7 +19,9 @@ jobs:
           role-to-assume: arn:aws:iam::728905192898:role/github-oids-role
 #         role-session-name: samplerolesession
           aws-region: us-east-1
-          audience: sts.amazonaws.com
+#         audience: sts.amazonaws.com
+          aws-region: sts.us-east-1.amazonaws.com
+                
       # Upload a file to AWS s3
       - name: Debug GitHub OIDC Token
         run: |
