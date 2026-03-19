@@ -22,6 +22,7 @@ jobs:
             echo "Decoded payload (partial): $PAYLOAD"  # or pipe to jq if valid JSON
           else
             echo "No ID token request env vars available."      
+          fi
       - name: Debug OIDC Token
         run: |
           TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
