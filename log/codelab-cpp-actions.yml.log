@@ -1,0 +1,148 @@
+time="2026-02-19T06:39:35-08:00" level=info msg="Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'"
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] ⭐ Run Set up job
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] 🚀  Start image=catthehacker/ubuntu:act-latest
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] using DockerAuthConfig authentication for docker pull
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ✅  Success - Set up job
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ☁  git clone 'https://github.com/actions/setup-node' # ref=v4
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] ⭐ Run Main actions/checkout@v4
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker cp src=/home/nonroot/extdir/gg/git/codelab-cpp-mirror/. dst=/home/nonroot/extdir/gg/git/codelab-cpp-mirror
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ✅  Success - Main actions/checkout@v4 [307.904517ms]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] ⭐ Run Main actions/setup-node@v4
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker cp src=/home/nonroot/.cache/act/actions-setup-node@v4/ dst=/var/run/act/actions/actions-setup-node@v4/
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker exec cmd=[/opt/acttoolcache/node/24.13.1/x64/bin/node /var/run/act/actions/actions-setup-node@v4/dist/setup/index.js] user= workdir=
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Attempting to download 20...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | (node:31) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | (Use `node --trace-deprecation ...` to show where the warning was created)
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Acquiring 20.20.0 - x64 from https://github.com/actions/node-versions/releases/download/20.20.0-20981710805/node-20.20.0-linux-x64.tar.gz
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Extracting ...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /tmp/c4b70720-89d9-4daa-aaa9-f9aebed057a8 -f /tmp/0e3bdb01-ee25-40be-bfe4-23c5bc29002e
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Adding to the cache ...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ❓  ::group::Environment details
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | node: v20.20.0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | npm: 10.8.2
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | yarn: 
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ❓  ::endgroup::
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ❓ add-matcher /run/act/actions/actions-setup-node@v4/.github/tsc.json
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ❓ add-matcher /run/act/actions/actions-setup-node@v4/.github/eslint-stylish.json
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ❓ add-matcher /run/act/actions/actions-setup-node@v4/.github/eslint-compact.json
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ✅  Success - Main actions/setup-node@v4 [9.117102123s]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ⚙  ::set-output:: node-version=v20.20.0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ⚙  ::add-path:: /opt/hostedtoolcache/node/20.20.0/x64/bin
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] ⭐ Run Main ./build_compile.sh
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker exec cmd=[bash -e /var/run/act/workflow/2] user= workdir=
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | /home/nonroot/extdir/gg/git/codelab-cpp-mirror/exercises/sams-teach-urself-cpp/L9 /home/nonroot/extdir/gg/git/codelab-cpp-mirror
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ pushd exercises/sams-teach-urself-cpp/L9
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ mkdir out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | mkdir: cannot create directory ‘out’: File exists
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ret=0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p229.cpp -o out/./p229.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p229.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | overloaded constructor created name and age: Adam25
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | overloaded constructor created name and age: Eve28
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | I am Adam and age 25
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | I am Eve and age 28
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p229.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p231.cpp -o out/./p231.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p231.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | overloaded constructor created name and age: Adam25
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | overloaded constructor created name and age: Eve28
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | overloaded constructor created name and age: Binary70
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | I am Adam and age 25
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | I am Eve and age 28
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | I am Binary and age 70
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p231.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p235.cpp -o out/./p235.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p235.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | String buffer is SayHello is Hello from String Classcharacters long
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Buffer contains: Hello from String Class
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p235.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p238.cpp -o out/./p238.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p238.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | String buffer in MyString is 23characters long
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | buffer contains Hello from String Class
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | free(): double free detected in tcache 2
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ./build_compile.sh: line 5:    94 Aborted                 (core dumped) ./out/$i.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p238.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p241.cpp -o out/./p241.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p241.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | buffer points to: 0x0x5d61e4bc62d0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Copy constructor: copying from Mystring
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | buffer points to: 0x0x5d61e4bc62b0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | String buffer in MyString is 17characters long
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | buffer contains Hello from String Class
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p241.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p245.cpp -o out/./p245.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p245.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Constructor: buffer points to: 0x0x5cf44f9eb2d0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Copy constructor: copying from Mystring
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Copy constructor: buffer points to: 0x0x5cf44f9eb2b0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Invoking destructor, clearing up
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p245.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p246.cpp -o out/./p246.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p246.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | constructor...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | copy constructor...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | constructor...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | copy assignment constructor...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ./build_compile.sh: line 5:   112 Illegal instruction     (core dumped) ./out/$i.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p246.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p247.cpp -o out/./p247.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p247.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | static constructor...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | constructor...
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | The name of the president is Abraham Lincoln
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | --------- building and running $i ... ---------
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p247.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ for i in ./*.cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ echo '--------- building and running $i ... ---------'
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ g++ -w ./p258.cpp -o out/./p258.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ ./out/./p258.cpp.out
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | Accessing private member age via friend function: person age: 25
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ [[ -f ./out/./p258.cpp.out ]]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ popd
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | /home/nonroot/extdir/gg/git/codelab-cpp-mirror
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | ++ exit 0
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ✅  Success - Main ./build_compile.sh [6.325549317s]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] ⭐ Run Post actions/setup-node@v4
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   🐳  docker exec cmd=[/opt/acttoolcache/node/24.13.1/x64/bin/node /var/run/act/actions/actions-setup-node@v4/dist/cache-save/index.js] user= workdir=
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | (node:125) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   | (Use `node --trace-deprecation ...` to show where the warning was created)
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ✅  Success - Post actions/setup-node@v4 [304.627288ms]
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] ⭐ Run Complete job
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] Cleaning up container for job exercises_sams-teach-urself-cpp
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp]   ✅  Success - Complete job
+[codelab-cpp-actions/exercises_sams-teach-urself-cpp] 🏁  Job succeeded

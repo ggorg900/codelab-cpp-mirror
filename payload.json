@@ -1,0 +1,8 @@
+{
+  "inputs": {
+    "CONFIG_OVERRIDE_FILE": "configs.config-tmp-gh-action-build.sh",
+    "BUILD_THEROCK": 1,
+    "FORCE_REBUILD": 0,
+    "UTD_NO_UPLOAD": 1
+  }
+}
