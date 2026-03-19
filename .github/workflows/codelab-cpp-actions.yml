@@ -11,7 +11,18 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v5
-      - name: Debug GitHub OIDC Token
+      - name: Debug OIDC Token Claims
+        run: |
+          if [ -n "${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" ]; then
+            TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r .value)
+            echo "Token acquired."
+            # Decode payload manually (base64url -> base64)
+            PAYLOAD=$(echo $TOKEN | cut -d '.' -f 2 | tr '_' '/' | tr '-' '+' | base64 -d 2>/dev/null || echo "Decode failed")
+            echo "Decoded payload (partial): $PAYLOAD"  # or pipe to jq if valid JSON
+          else
+            echo "No ID token request env vars available."      - name: Debug GitHub OIDC Token
+      - name: Debug OIDC Token
         run: |
           TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
             "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r .value)
