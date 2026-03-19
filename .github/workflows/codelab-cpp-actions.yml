@@ -19,9 +19,16 @@ jobs:
 #         role-session-name: samplerolesession
           aws-region: us-east-1
       # Upload a file to AWS s3
+      - name: Debug GitHub OIDC Token
+        run: |
+          TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r .value)
+          echo "Full token (base64): $TOKEN"
+          # To see payload: copy the middle part (between . and .) and decode at jwt.io
+          # Or install jq + base64 decode if you want in runner        
       - name: query s3
         run: |
-          aws s3 ls s3://oid-test-bucket
+                aws s3 ls s3://oid-test-bucket
   exercises_sams-teach-urself-cpp:
     needs: [S3_test]
     runs-on: ubuntu-latest
