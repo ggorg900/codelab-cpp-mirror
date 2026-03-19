@@ -21,7 +21,7 @@ jobs:
             PAYLOAD=$(echo $TOKEN | cut -d '.' -f 2 | tr '_' '/' | tr '-' '+' | base64 -d 2>/dev/null || echo "Decode failed")
             echo "Decoded payload (partial): $PAYLOAD"  # or pipe to jq if valid JSON
           else
-            echo "No ID token request env vars available."      - name: Debug GitHub OIDC Token
+            echo "No ID token request env vars available."      
       - name: Debug OIDC Token
         run: |
           TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
