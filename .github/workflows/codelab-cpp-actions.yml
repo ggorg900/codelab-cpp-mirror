@@ -16,7 +16,8 @@ jobs:
 #       uses: aws-actions/configure-aws-credentials@v3
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::728905192898:role/github-oids-role
+#         role-to-assume: arn:aws:iam::728905192898:role/github-oids-role
+          role-to-assume: arn:aws:iam::728905192898:role/GH-OIDC-S3-Access-Role-name
 #         role-session-name: samplerolesession
           aws-region: us-east-1
 #         audience: sts.amazonaws.com
